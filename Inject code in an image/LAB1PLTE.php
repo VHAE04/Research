@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['uploaded_file'])) {
         $newFilename = uniqid() . '_' . $originalFilename;
 
         // Đường dẫn lưu file nén
-        $destination = 'C:\xamppt\htdocs\traning\\' . $newFilename;
+        $destination = 'C:\xampp\htdocs\traning\\' . $newFilename;
 
         // Tạo hình ảnh từ file PNG đã tải lên
         $source = imagecreatefrompng($uploadedFile['tmp_name']);
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['uploaded_file'])) {
         // Giải phóng bộ nhớ
         imagedestroy($source);
 
-        echo "File đã được nén và lưu thành công: " . $newFilename;
+        echo "File đã được nén và lưu thành công: " . $destination;
     } else {
         echo "Vui lòng tải lên một file PNG.";
     }
